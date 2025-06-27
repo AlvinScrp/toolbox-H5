@@ -2,7 +2,7 @@
 
 程序开发过程中经常要用的工具，如JSON格式化， Base64，URLEncode  时间戳，进制，颜色数值等等
 
-访问: https://pro-5gu0t2os8cdd45f2-1251420592.tcloudbaseapp.com/toolbox-h5/index.html#/json
+https://alvinscrp.github.io/toolbox-H5
 
 # JSON格式化
 
@@ -15,13 +15,13 @@ https://github.com/cloydlau/json-editor-vue/blob/main/docs/README.zh-CN.md
 ## Project setup
 
 ```
-yarn install
+npm install
 ```
 
 ### Compiles and hot-reloads for development
 
 ```
-yarn run serve
+npm run serve
 ```
 
 ### Compiles and minifies for production
@@ -35,4 +35,3 @@ npm run build
 ```
 npm run lint
 ```
-# 触发GitHub Actions部署
