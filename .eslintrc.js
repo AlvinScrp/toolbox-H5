@@ -12,15 +12,10 @@ module.exports = {
   },
   rules: {
     'space-before-function-paren': 0,
-    'vue/multi-word-component-names': [
-      'error',
-      {
-        ignores: ['index'] // 需要忽略的组件名
-      }
-    ],
-    'quotes': [2, 'single', {
-      'avoidEscape': true,
-      'allowTemplateLiterals': true
+    'vue/multi-word-component-names': 'off',
+    quotes: [2, 'single', {
+      avoidEscape: true,
+      allowTemplateLiterals: true
     }],
     'no-multiple-empty-lines': 'off',
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
