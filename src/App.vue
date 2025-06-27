@@ -41,6 +41,7 @@ export default {
         { path: '/number', label: '进制转换' },
         { path: '/timestamp', label: '时间戳' },
         { path: '/color', label: '颜色' },
+        { path: '/imagelayout', label: '画布编辑器' },
         { path: '/ascii', label: 'ASCII码' },
         { path: '/cli_im', label: '草料二维码' },
         { path: '/about', label: 'About' }
@@ -88,8 +89,8 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
-  margin: 0 5%;
-  padding-top: 20px;
+  margin: 0 12px;
+  padding-top: 12px;
 }
 
 .visitor-count {

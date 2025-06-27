@@ -10,8 +10,9 @@ const features = [
   'hash',
   'number',
   'timestamp',
-  'ascii',
   'color',
+  'imagelayout',
+  'ascii',
   'about'
 ].map((item) => ({
   path: `/${item}`,
