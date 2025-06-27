@@ -7,6 +7,9 @@ function resolve(dir) {
 module.exports = defineConfig({
   transpileDependencies: true,
 
+  // GitHub Pages 部署配置
+  publicPath: process.env.NODE_ENV === 'production' ? './' : '/',
+
   devServer: {
     port: 7001
 

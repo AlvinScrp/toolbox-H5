@@ -13,8 +13,31 @@
       <router-link to="/about">About</router-link>
     </nav>
     <router-view />
+    <!-- 访问统计 -->
+    <div class="visitor-count">
+      <span id="busuanzi_container_site_pv">
+        总访问量: <span id="busuanzi_value_site_pv"></span> 次
+      </span>
+      <br>
+      <span id="busuanzi_container_site_uv">
+        访客数: <span id="busuanzi_value_site_uv"></span> 人
+      </span>
+    </div>
   </div>
 </template>
+
+<script>
+export default {
+  name: 'App',
+  mounted() {
+    // 添加不蒜子统计脚本
+    const script = document.createElement('script')
+    script.src = '//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js'
+    script.async = true
+    document.head.appendChild(script)
+  }
+}
+</script>
 
 <style>
 #app {
@@ -42,5 +65,18 @@ nav a {
 nav a.router-link-exact-active {
   color: #42b983;
   text-decoration: underline;
+}
+
+.visitor-count {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 8px 12px;
+  border-radius: 4px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  font-size: 14px;
+  color: #666;
+  z-index: 1000;
 }
 </style>
