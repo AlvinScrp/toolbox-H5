@@ -1,21 +1,10 @@
 <template>
   <div>
     <div class="convert-area">
-      <input
-        maxlength="1"
-        placeholder="字符"
-        type="text"
-        ref="inputText"
-        v-model="charText1"
-      />
+      <input maxlength="1" placeholder="字符" type="text" ref="inputText" v-model="charText1" />
       <span class="input-arrow">转ascii码:</span>
       <span class="result">{{ asciiText1 }}</span>
-      <input
-        type="text"
-        class="second-input"
-        v-model="asciiText2"
-        placeholder="ascii码"
-      />
+      <input type="text" class="second-input" v-model="asciiText2" placeholder="ascii码" />
       <span class="input-arrow">转字符:</span>
       <span class="result">{{ charText2 }}</span>
       <span style="color: red">{{ errorText }}</span>
@@ -371,49 +360,46 @@ export default {
       charText2: '',
       asciiText2: '',
       errorText: ''
-    }
+    };
   },
   watch: {
     charText1: {
       handler(newValue, oldValue) {
-        const text = newValue.trim()
-        const ascii = text ? text.charCodeAt(0) : ''
+        const text = newValue.trim();
+        const ascii = text ? text.charCodeAt(0) : '';
         if (ascii === 0 || ascii === '') {
-          this.charText1 = ''
-          this.asciiText1 = ''
+          this.charText1 = '';
+          this.asciiText1 = '';
         } else {
-          this.asciiText1 = ascii
-          console.log(
-            `watch charText,${text},${text.length},`,
-            this.asciiText1
-          )
+          this.asciiText1 = ascii;
+          console.log(`watch charText,${text},${text.length},`, this.asciiText1);
         }
-        this.errorText = ''
+        this.errorText = '';
       }
     },
     asciiText2: {
       handler(newValue, oldValue) {
         if (newValue === '') {
-          return
+          return;
         }
 
         if (typeof newValue !== 'number' || newValue < 32 || newValue > 126) {
           // this.errorText = '请输入非特殊ascii码 （32~127）'
-          this.charText2 = 'NaN?'
-          return
+          this.charText2 = 'NaN?';
+          return;
         }
         // this.errorText = ''
-        const charText = String.fromCharCode(newValue)
-        this.charText2 = charText
-        console.log('watch asciiText', newValue, newValue.length, charText)
+        const charText = String.fromCharCode(newValue);
+        this.charText2 = charText;
+        console.log('watch asciiText', newValue, newValue.length, charText);
       }
     }
   },
   methods: {},
   mounted() {
-    this.$refs.inputText.focus()
+    this.$refs.inputText.focus();
   }
-}
+};
 </script>
 <style lang="less" scoped>
 .convert-area {

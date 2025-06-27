@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import { JSONEditor } from 'vanilla-jsoneditor'
+import { JSONEditor } from 'vanilla-jsoneditor';
 
 export default {
   name: 'VueJSONEditor',
@@ -19,21 +19,23 @@ export default {
   data() {
     return {
       config: {}
-    }
+    };
   },
   watch: {
     content: {
-      handler (newValue, oldValue) {
-        console.log(`'watch content handle ==========${this.tag}=========`, JSON.stringify(newValue))
-        this.editor.updateProps({ content: { text: newValue.text } })
+      handler(newValue, oldValue) {
+        console.log(
+          `'watch content handle ==========${this.tag}=========`,
+          JSON.stringify(newValue)
+        );
+        this.editor.updateProps({ content: { text: newValue.text } });
       },
       deep: true, // 是否深度监听
       immediate: false // 是否在组件创建时立即执行回调函数
     }
   },
   methods: {
-
-    generateProps () {
+    generateProps() {
       return {
         content: this.content,
         readOnly: this.readOnly,
@@ -41,30 +43,29 @@ export default {
         mode: this.mode,
         navigationBar: this.navigationBar,
         mainMenuBar: this.mainMenuBar
-      }
+      };
     }
   },
-  mounted () {
-    this.editor = new JSONEditor({ target: this.$refs.editor, props: this.generateProps() })
-    console.log('create editor', this.editor)
+  mounted() {
+    this.editor = new JSONEditor({ target: this.$refs.editor, props: this.generateProps() });
+    console.log('create editor', this.editor);
   },
-  updated () {
-    console.log('updated editor', this.editor)
-    this.editor.updateProps(this.generateProps())
+  updated() {
+    console.log('updated editor', this.editor);
+    this.editor.updateProps(this.generateProps());
   },
 
   beforeUnmount() {
-    console.log('destroy editor2')
-    this.editor.destroy()
-    this.editor = null
+    console.log('destroy editor2');
+    this.editor.destroy();
+    this.editor = null;
   }
-}
+};
 </script>
 
-<style lang='less'  scoped>
+<style lang="less" scoped>
 .svelte-jsoneditor-vue {
   display: flex;
   flex: 1;
-
 }
 </style>

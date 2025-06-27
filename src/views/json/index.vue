@@ -24,7 +24,7 @@
 
 <script>
 // import VueJSONEditor from './components/VueJSONEditor.vue'
-import VueJSONEditor from './components/VueJSONEditor.vue'
+import VueJSONEditor from './components/VueJSONEditor.vue';
 export default {
   components: { VueJSONEditor },
   data() {
@@ -39,36 +39,32 @@ export default {
         text: undefined
       },
       content2: {
-        json: {
-        },
+        json: {},
         text: undefined
       }
-    }
+    };
   },
 
-  mounted () {
-    this.onChange1(this.content)
+  mounted() {
+    this.onChange1(this.content);
   },
 
   methods: {
     onChange1(content) {
-      console.log('onChange1', content)
+      console.log('onChange1', content);
       // this.content = content
 
       if (content.text) {
-        this.content2.text = content.text
+        this.content2.text = content.text;
       } else if (content.json) {
-        this.content2.text = JSON.stringify(content.json)
+        this.content2.text = JSON.stringify(content.json);
       }
     }
   }
-
-}
+};
 </script>
 <style lang="less" scoped>
 .json {
-
-
   .editor {
     width: 100%;
     height: auto;

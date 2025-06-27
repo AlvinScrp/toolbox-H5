@@ -19,7 +19,7 @@
       <span id="busuanzi_container_site_pv">
         总访问量: <span id="busuanzi_value_site_pv"></span> 次
       </span>
-      <br>
+      <br />
       <span id="busuanzi_container_site_uv">
         访客数: <span id="busuanzi_value_site_uv"></span> 人
       </span>
@@ -45,38 +45,41 @@ export default {
         { path: '/cli_im', label: '草料二维码' },
         { path: '/about', label: 'About' }
       ]
-    }
+    };
   },
   watch: {
     $route: {
       immediate: true,
       handler(to) {
         if (to.path !== '/cli_im') {
-          this.activeTab = to.path
+          this.activeTab = to.path;
         }
       }
     }
   },
   methods: {
     handleClick(route) {
+      if (route === this.activeTab) {
+        return;
+      }
       if (route.path === '/cli_im') {
-        window.open('https://cli.im/', '_blank')
+        window.open('https://cli.im/', '_blank');
         // 恢复到之前选中的标签
         this.$nextTick(() => {
-          this.activeTab = this.$route.path
-        })
+          this.activeTab = this.$route.path;
+        });
       } else {
-        this.$router.push(route.path)
+        this.$router.push(route.path);
       }
     }
   },
   mounted() {
-    const script = document.createElement('script')
-    script.src = '//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js'
-    script.async = true
-    document.head.appendChild(script)
+    const script = document.createElement('script');
+    script.src = '//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js';
+    script.async = true;
+    document.head.appendChild(script);
   }
-}
+};
 </script>
 
 <style>
@@ -96,7 +99,7 @@ export default {
   background: rgba(255, 255, 255, 0.9);
   padding: 8px 12px;
   border-radius: 4px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   font-size: 14px;
   color: #666;
   z-index: 1000;

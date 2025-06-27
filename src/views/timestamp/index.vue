@@ -2,18 +2,19 @@
   <div>
     <p>
       <label class="form_left">现在：</label>
-      <input type="text" class="text" v-model="now.timeStamp" readonly>
-      <input type="text" class="text date" v-model="now.date" readonly>
+      <input type="text" class="text" v-model="now.timeStamp" readonly />
+      <input type="text" class="text date" v-model="now.date" readonly />
       <!-- <span>控制：</span> -->
-      <span v-on:click="onTickingClick" :style="{ color: ticking ? '#E74C3C' : '#009a61' }">&nbsp;{{ ticking ? '⏹停止' :
-        '►开始' }}</span>
+      <span v-on:click="onTickingClick" :style="{ color: ticking ? '#E74C3C' : '#009a61' }"
+        >&nbsp;{{ ticking ? '⏹停止' : '►开始' }}</span
+      >
     </p>
     <p>
       <label class="form_left">时间戳</label>
-      <input type="text" class="text" v-model="convert1.timeStamp">
+      <input type="text" class="text" v-model="convert1.timeStamp" />
       <span>毫秒(ms)&nbsp;&nbsp;</span>
       <button v-on:click="onConvert1Click" type="button">转换 &rsaquo;</button>
-      <input type="text" class="text date" v-model="convert1.date" readonly>
+      <input type="text" class="text date" v-model="convert1.date" readonly />
       <span>北京时间</span>
       <!--
             <select id="js_timezone" name="timezone" readonly>
@@ -54,7 +55,7 @@
     </p>
     <p>
       <label class="form_left">北京时间</label>
-      <input type="text" class="text date" v-model="convert2.date">
+      <input type="text" class="text date" v-model="convert2.date" />
       <!--
             <select id="js_timezone_o" name="timezone" readonly>
                                     <option value="-1200" >(GMT -12:00) 埃尼威托克岛, 夸贾林环礁</option>
@@ -92,16 +93,15 @@
                             </select>
             -->
       <button v-on:click="onConvert2Click" type="button">转换 &rsaquo;</button>
-      <input type="text" class="text" v-model="convert2.timeStamp" readonly>
+      <input type="text" class="text" v-model="convert2.timeStamp" readonly />
       <span>毫秒(ms)</span>
-
     </p>
   </div>
 </template>
 
 <script>
 export default {
-  data () {
+  data() {
     return {
       timer: 0,
       ticking: true,
@@ -117,61 +117,62 @@ export default {
         timeStamp: '',
         date: ''
       }
-    }
+    };
   },
   methods: {
-    onTickingClick () {
-      this.ticking = !this.ticking
-      this.stopTicking()
+    onTickingClick() {
+      this.ticking = !this.ticking;
+      this.stopTicking();
       if (this.ticking) {
-        this.updateNow()
-        this.startTicking()
+        this.updateNow();
+        this.startTicking();
       }
     },
-    onConvert1Click () {
-      this.convert1.date = this.timeFormat(parseInt(this.convert1.timeStamp))
+    onConvert1Click() {
+      this.convert1.date = this.timeFormat(parseInt(this.convert1.timeStamp));
     },
-    onConvert2Click () {
-      const date = new Date(this.convert2.date)
-      this.convert2.timeStamp = date.getTime()
+    onConvert2Click() {
+      const date = new Date(this.convert2.date);
+      this.convert2.timeStamp = date.getTime();
     },
-    timeFormat (timestamp) {
+    timeFormat(timestamp) {
       const prefixZero = function (value) {
-        return value < 10 ? `0${value}` : `${value}`
-      }
-      const date = new Date(timestamp)
-      const y = date.getFullYear()
-      const m = prefixZero(date.getMonth() + 1)
-      const d = prefixZero(date.getDate())
-      const h = prefixZero(date.getHours())
-      const minute = prefixZero(date.getMinutes())
-      const second = prefixZero(date.getSeconds())
-      const milliseconds = date.getMilliseconds()
-      console.log('timeFormat', timestamp, y, m, d, h)
-      return `${y}-${m}-${d} ${h}:${minute}:${second}.${milliseconds}`
+        return value < 10 ? `0${value}` : `${value}`;
+      };
+      const date = new Date(timestamp);
+      const y = date.getFullYear();
+      const m = prefixZero(date.getMonth() + 1);
+      const d = prefixZero(date.getDate());
+      const h = prefixZero(date.getHours());
+      const minute = prefixZero(date.getMinutes());
+      const second = prefixZero(date.getSeconds());
+      const milliseconds = date.getMilliseconds();
+      console.log('timeFormat', timestamp, y, m, d, h);
+      return `${y}-${m}-${d} ${h}:${minute}:${second}.${milliseconds}`;
     },
-    updateNow () {
-      const timeStamp = new Date().getTime()
-      this.now.timeStamp = timeStamp
-      this.now.date = this.timeFormat(timeStamp)
+    updateNow() {
+      const timeStamp = new Date().getTime();
+      this.now.timeStamp = timeStamp;
+      this.now.date = this.timeFormat(timeStamp);
     },
-    startTicking () {
-      this.timer = setInterval(() => { this.updateNow() }, 1000)
+    startTicking() {
+      this.timer = setInterval(() => {
+        this.updateNow();
+      }, 1000);
     },
-    stopTicking () {
-      clearInterval(this.timer)
+    stopTicking() {
+      clearInterval(this.timer);
     }
-
   },
-  mounted () {
-    this.startTicking()
+  mounted() {
+    this.startTicking();
   },
-  beforeDestroy () {
-    this.stopTicking()
+  beforeDestroy() {
+    this.stopTicking();
   }
-}
+};
 </script>
-<style lang='less' scoped>
+<style lang="less" scoped>
 .form_left {
   width: 60px;
   float: left;
@@ -207,7 +208,7 @@ input {
   width: 200px;
   margin-top: 4px;
   margin-bottom: 4px;
-  background-color: #F1F1F1;
+  background-color: #f1f1f1;
   font-size: 15px;
   outline: none;
   border-radius: 5px;
@@ -233,8 +234,8 @@ button {
   padding: 4px 7px 3px;
   font-size: 12px;
   line-height: 130%;
-  font-family: "Lucida Grande", Tahoma, Arial, Verdana, sans-serif;
-  box-shadow: 0 2px 0 rgba(0, 0, 0, .02);
+  font-family: 'Lucida Grande', Tahoma, Arial, Verdana, sans-serif;
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.02);
 }
 
 select {
