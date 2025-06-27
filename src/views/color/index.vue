@@ -17,10 +17,10 @@ export default {
   data () {
     return {
       colors: {
-        hex: 'var(--primary-color)'
+        hex: '#409EFF'
       },
-      ahex: 'var(--primary-color)',
-      rgba: 'rgba(66,185,131,1)'
+      ahex: '#FF409EFF',
+      rgba: 'rgba(64,158,255,1)'
     }
   },
   methods: {
