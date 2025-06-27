@@ -217,7 +217,7 @@ input {
 
 input:focus {
   outline: none;
-  border: 2px solid #42b983;
+  border: 2px solid var(--primary-color);
 }
 
 button {

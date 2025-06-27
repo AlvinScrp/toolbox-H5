@@ -74,9 +74,17 @@ export default {
 <style lang="less" scoped>
 .container {
 
-  textarea {
-    font-size: 15px;
-  }
+
+  textarea{
+  font-size: 15px;
+  outline: none;
+  border: 2px solid #e3dddd;
+ }
+
+ textarea:focus{
+  outline: none;
+  border: 2px solid var(--primary-color);
+ }
 
   .label {}
 
@@ -84,7 +92,7 @@ export default {
     padding: 10px;
     font-size: 16px;
     line-height: 1.6;
-    color: #42b983;
+    color: var(--primary-color);
   }
 }
 </style>

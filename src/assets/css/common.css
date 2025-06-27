@@ -1,0 +1,20 @@
+:root {
+  --primary-color: #409EFF;
+  --primary-hover-color: #337ecc;
+  --primary-light-color: rgba(66, 185, 131, 0.1);
+}
+
+/* 主题色文本 */
+.text-primary {
+  color: var(--primary-color);
+}
+
+/* 主题色背景 */
+.bg-primary {
+  background-color: var(--primary-color);
+}
+
+/* 主题色边框 */
+.border-primary {
+  border-color: var(--primary-color);
+}

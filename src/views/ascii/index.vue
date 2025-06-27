@@ -434,7 +434,7 @@ export default {
 
   input:focus {
     outline: none;
-    border: 2px solid #42b983;
+    border: 2px solid var(--primary-color);
   }
   .result {
     padding: 10px;
@@ -442,7 +442,7 @@ export default {
     font-size: 15px;
   }
   .input-arrow {
-    color: #42b983;
+    color: var(--primary-color);
   }
 }
 

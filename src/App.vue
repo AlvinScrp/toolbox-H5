@@ -1,17 +1,18 @@
 <template>
   <div id="app">
-    <nav>
-      <router-link to="/json">JSON格式化</router-link>
-      <router-link to="/urlencode">URL编解码</router-link>
-      <router-link to="/base64">Base64</router-link>
-      <router-link to="/hash">Hash</router-link>
-      <router-link to="/number">进制转换</router-link>
-      <router-link to="/timestamp">时间戳</router-link>
-      <router-link to="/color">颜色</router-link>
-      <a target="_blank" href="https://cli.im/">草料二维码</a>
-      <router-link to="/ascii">ASCII码</router-link>
-      <router-link to="/about">About</router-link>
-    </nav>
+    <div class="nav-tags">
+      <el-tag
+        v-for="route in routes"
+        :key="route.path"
+        :type="activeTab === route.path ? '' : 'info'"
+        :effect="activeTab === route.path ? 'dark' : 'plain'"
+        @click="handleClick(route)"
+        :class="['nav-tag', { active: activeTab === route.path }]"
+      >
+        {{ route.label }}
+      </el-tag>
+    </div>
+
     <router-view />
     <!-- 访问统计 -->
     <div class="visitor-count">
@@ -29,8 +30,47 @@
 <script>
 export default {
   name: 'App',
+  data() {
+    return {
+      activeTab: '/json',
+      routes: [
+        { path: '/json', label: 'JSON格式化' },
+        { path: '/urlencode', label: 'URL编解码' },
+        { path: '/base64', label: 'Base64' },
+        { path: '/hash', label: 'Hash' },
+        { path: '/number', label: '进制转换' },
+        { path: '/timestamp', label: '时间戳' },
+        { path: '/color', label: '颜色' },
+        { path: '/ascii', label: 'ASCII码' },
+        { path: '/cli_im', label: '草料二维码' },
+        { path: '/about', label: 'About' }
+      ]
+    }
+  },
+  watch: {
+    $route: {
+      immediate: true,
+      handler(to) {
+        if (to.path !== '/cli_im') {
+          this.activeTab = to.path
+        }
+      }
+    }
+  },
+  methods: {
+    handleClick(route) {
+      if (route.path === '/cli_im') {
+        window.open('https://cli.im/', '_blank')
+        // 恢复到之前选中的标签
+        this.$nextTick(() => {
+          this.activeTab = this.$route.path
+        })
+      } else {
+        this.$router.push(route.path)
+      }
+    }
+  },
   mounted() {
-    // 添加不蒜子统计脚本
     const script = document.createElement('script')
     script.src = '//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js'
     script.async = true
@@ -44,27 +84,9 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* text-align: center; */
   color: #2c3e50;
-
   margin: 0 5%;
-}
-
-nav {
-  font-size: 18px;
-  padding: 30px 0;
-}
-
-nav a {
-  margin-right: 20px;
-  font-weight: bold;
-  color: #2c3e50;
-  text-decoration: none;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
-  text-decoration: underline;
+  padding-top: 20px;
 }
 
 .visitor-count {
@@ -78,5 +100,46 @@ nav a.router-link-exact-active {
   font-size: 14px;
   color: #666;
   z-index: 1000;
+}
+
+/* 导航标签样式 */
+.nav-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 0 20px;
+  margin-bottom: 20px;
+}
+
+.nav-tag {
+  cursor: pointer;
+  font-size: 14px !important;
+  padding: 8px 16px !important;
+  transition: all 0.3s ease !important;
+  display: flex !important;
+  align-items: center !important;
+  height: 32px !important;
+  line-height: 1 !important;
+}
+
+.nav-tag:hover {
+  transform: translateY(-2px);
+}
+
+.nav-tag.active {
+  font-weight: 500;
+}
+
+/* 覆盖 Element UI 的默认标签样式 */
+.el-tag.el-tag--info.el-tag--plain {
+  background-color: #fff;
+  border-color: #dcdfe6;
+  color: #606266;
+}
+
+.el-tag.el-tag--info.el-tag--plain:hover {
+  background-color: #f4f4f5;
+  border-color: #909399;
+  color: #909399;
 }
 </style>

@@ -58,7 +58,7 @@ textarea{
 
  textarea:focus{
   outline: none;
-  border: 2px solid #42b983;
+  border: 2px solid var(--primary-color);
  }
 
   .options{
@@ -66,7 +66,7 @@ textarea{
     flex-direction: row;
     .option{
       margin: 2px 30px;
-      color: #42b983;
+      color: var(--primary-color);
   }
 }
 

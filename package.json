@@ -16,6 +16,7 @@
     "buffer": "^6.0.3",
     "core-js": "^3.8.3",
     "crypto-js": "^4.1.1",
+    "element-ui": "^2.15.14",
     "vanilla-jsoneditor": "0.17.7",
     "vue": "^2.6.14",
     "vue-color": "^2.8.1",

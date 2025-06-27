@@ -74,8 +74,8 @@ export default {
     height: auto;
     display: flex;
 
-    --jse-theme-color: #42b983;
-    --jse-theme-color-highlight: #4d9b78;
+    --jse-theme-color: var(--primary-color);
+    --jse-theme-color-highlight: var(--primary-hover-color);
   }
 }
 </style>

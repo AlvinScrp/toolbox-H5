@@ -17,9 +17,9 @@ export default {
   data () {
     return {
       colors: {
-        hex: '#42b983'
+        hex: 'var(--primary-color)'
       },
-      ahex: '#42b983',
+      ahex: 'var(--primary-color)',
       rgba: 'rgba(66,185,131,1)'
     }
   },
