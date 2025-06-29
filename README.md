@@ -1,16 +1,12 @@
 # toolbox-H5
 
-程序开发过程中经常要用的工具，如JSON格式化， Base64，URLEncode  时间戳，进制，颜色数值等等
+程序开发过程中经常要用的工具，如JSON格式化， Base64，URLEncode  时间戳，进制，颜色数值，二维码功能等等
 
-https://alvinscrp.github.io/toolbox-H5
+使用：https://alvinscrp.github.io/toolbox-H5
 
-# JSON格式化
+github地址:[https://github.com/AlvinScrp/toolbox-H5](https://github.com/AlvinScrp/toolbox-H5)
 
-参考
-
-https://github.com/josdejong/svelte-jsoneditor
-https://codesandbox.io/s/svelte-jsoneditor-vue-toln3w
-https://github.com/cloydlau/json-editor-vue/blob/main/docs/README.zh-CN.md
+说明文章：https://juejin.cn/post/7251786209339899964
 
 ## Project setup
 
@@ -22,16 +18,4 @@ npm install
 
 ```
 npm run serve
-```
-
-### Compiles and minifies for production
-
-```
-npm run build
-```
-
-### Lints and fixes files
-
-```
-npm run lint
 ```
