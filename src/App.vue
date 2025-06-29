@@ -35,12 +35,13 @@ export default {
       activeTab: '/json',
       routes: [
         { path: '/json', label: 'JSON格式化' },
+        { path: '/timestamp', label: '时间戳' },
+        { path: '/color', label: '颜色' },
+        { path: '/qrcode', label: '二维码' },
+        { path: '/number', label: '进制转换' },
         { path: '/urlencode', label: 'URL编解码' },
         { path: '/base64', label: 'Base64' },
         { path: '/hash', label: 'Hash' },
-        { path: '/number', label: '进制转换' },
-        { path: '/timestamp', label: '时间戳' },
-        { path: '/color', label: '颜色' },
         { path: '/imagelayout', label: '画布编辑器' },
         { path: '/ascii', label: 'ASCII码' },
         { path: '/cli_im', label: '草料二维码' },
@@ -118,11 +119,11 @@ export default {
 .nav-tag {
   cursor: pointer;
   font-size: 14px !important;
-  padding: 8px 16px !important;
+  padding: 0px 10px !important;
   transition: all 0.3s ease !important;
   display: flex !important;
   align-items: center !important;
-  height: 32px !important;
+  height: 30px !important;
   line-height: 1 !important;
 }
 

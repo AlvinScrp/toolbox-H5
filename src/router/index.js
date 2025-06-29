@@ -6,11 +6,12 @@ Vue.use(VueRouter);
 const features = [
   'json',
   'urlencode',
+  'timestamp',
+  'color',
+  'qrcode',
   'base64',
   'hash',
   'number',
-  'timestamp',
-  'color',
   'imagelayout',
   'ascii',
   'about'
