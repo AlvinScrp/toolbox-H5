@@ -59,7 +59,8 @@ export default {
       ],
       moreTools: [
         { url: 'https://cli.im/', label: '草料二维码', favicon: 'https://static.clewm.net/static/images/favicon.ico' },
-        { url: 'https://tinypng.com/', label: 'TinyPNG', favicon: 'https://tinypng.com/images/favicon.ico' }
+        { url: 'https://tinypng.com/', label: 'TinyPNG', favicon: 'https://tinypng.com/images/favicon.ico' },
+        { url: 'https://excalidraw.com/', label: 'excalidraw', favicon: 'https://excalidraw.com/favicon-32x32.png' }
       ]
     };
   },
