@@ -29,7 +29,7 @@ export default {
 
 <style lang="less" scoped>
 .qrcode-container {
-  padding: 20px;
+  padding:0px 20px;
   display: flex;
   gap: 20px;
 
@@ -37,12 +37,12 @@ export default {
     flex: 1;
     min-width: 300px;
     background: #fff;
-    padding: 20px;
+    padding:12px;
     border-radius: 8px;
     box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
 
     h3 {
-      margin: 0 0 20px 0;
+      margin: 0 0 8px 0;
       color: #303133;
       font-size: 18px;
     }
