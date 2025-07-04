@@ -51,6 +51,7 @@ export default {
         { path: '/qrcode', label: '二维码' },
         { path: '/number', label: '进制转换' },
         { path: '/urlencode', label: 'URL编解码' },
+        { path: '/unicode', label: 'Unicode' },
         { path: '/base64', label: 'Base64' },
         { path: '/hash', label: 'Hash' },
         { path: '/imagelayout', label: '画布' }
