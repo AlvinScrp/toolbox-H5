@@ -69,6 +69,7 @@ export default {
     width: 100%;
     height: auto;
     display: flex;
+    margin-bottom: 120px;
 
     --jse-theme-color: var(--primary-color);
     --jse-theme-color-highlight: var(--primary-hover-color);
