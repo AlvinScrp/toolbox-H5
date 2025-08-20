@@ -15,6 +15,7 @@ const features = [
   'number',
   'imagelayout',
   'ascii',
+  'markdown',
   'about'
 ].map((item) => ({
   path: `/${item}`,
@@ -24,13 +25,14 @@ const features = [
 const routes = [
   {
     path: '/',
-    redirect: '/json'
+    name: 'Home',
+    component: () => import('../views/Home.vue')
   }
 ];
 routes.push(...features);
 
 const router = new VueRouter({
-  mode: 'hash',
+  mode: 'history',
   base: process.env.BASE_URL,
   routes
 });

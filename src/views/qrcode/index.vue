@@ -29,9 +29,9 @@ export default {
 
 <style lang="less" scoped>
 .qrcode-container {
-  padding:0px 20px;
+  padding:12px 0px;
   display: flex;
-  gap: 20px;
+  gap: 12px;
 
   .section {
     flex: 1;
